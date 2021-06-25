@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/screens/notifications.dart';
 import 'package:flutter_ui/screens/widgets/constants.dart';
 import 'package:flutter_ui/screens/widgets/custom_drawer.dart';
 import 'package:flutter_ui/screens/widgets/custom_text.dart';
@@ -45,10 +46,13 @@ class _VoucherState extends State<Voucher> with SingleTickerProviderStateMixin {
         elevation: 0.0,
         centerTitle: true,
         actions: [
-          Padding(
-            padding: EdgeInsets.only(right: 14.w),
-            child:
-                Icon(Icons.notifications_outlined, color: mainColor, size: 30),
+          GestureDetector(
+            onTap: () => Get.to(Notifications()),
+            child: Padding(
+              padding: EdgeInsets.only(right: 14.w),
+              child: Icon(Icons.notifications_outlined,
+                  color: mainColor, size: 30),
+            ),
           )
         ],
         iconTheme: IconThemeData(color: mainColor),
