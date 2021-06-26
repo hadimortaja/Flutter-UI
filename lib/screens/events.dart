@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ui/screens/event_details.dart';
 import 'package:flutter_ui/screens/notifications.dart';
 import 'package:flutter_ui/screens/voucher_details.dart';
 import 'package:flutter_ui/screens/widgets/constants.dart';
@@ -53,7 +54,7 @@ class EventItem extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () {
-            Get.to(VoucherDetails());
+            Get.to(EventDetails());
           },
           child: Container(
             height: 220.h,

@@ -29,7 +29,7 @@ class StoreDetails extends StatelessWidget {
         ],
         iconTheme: IconThemeData(color: mainColor),
       ),
-      drawer: customDrawer(),
+      // drawer: customDrawer(),
       body: ListView(
         children: [
           Image.asset(

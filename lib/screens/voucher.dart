@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ui/screens/notifications.dart';
+import 'package:flutter_ui/screens/voucher_details.dart';
 import 'package:flutter_ui/screens/widgets/constants.dart';
 import 'package:flutter_ui/screens/widgets/custom_drawer.dart';
 import 'package:flutter_ui/screens/widgets/custom_text.dart';
@@ -109,75 +110,87 @@ class _VoucherState extends State<Voucher> with SingleTickerProviderStateMixin {
                   primary: false,
                   itemCount: 8,
                   itemBuilder: (BuildContext context, int index) {
-                    return Column(
-                      children: [
-                        SizedBox(
-                          height: 15.h,
-                        ),
-                        Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                width:
-                                    MediaQuery.of(context).size.width / 2 - 22,
-                                height: 60.h,
-                                decoration: new BoxDecoration(
-                                  gradient: new LinearGradient(
-                                      colors: [Colors.white, Color(0xFFc8fff4)],
-                                      stops: [0.3, 1.0],
-                                      begin: FractionalOffset.bottomLeft,
-                                      end: FractionalOffset.topRight,
-                                      tileMode: TileMode.repeated),
-                                  // borderRadius: BorderRadius.circular(10.0),
-                                  borderRadius: BorderRadius.only(
-                                    topRight: Radius.circular(20.0),
-                                    bottomRight: Radius.circular(20.0),
+                    return GestureDetector(
+                      onTap: () {
+                        Get.to(VoucherDetails());
+                      },
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            height: 15.h,
+                          ),
+                          Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  width: MediaQuery.of(context).size.width / 2 -
+                                      22,
+                                  height: 60.h,
+                                  decoration: new BoxDecoration(
+                                    gradient: new LinearGradient(
+                                        colors: [
+                                          Colors.white,
+                                          Color(0xFFc8fff4)
+                                        ],
+                                        stops: [
+                                          0.3,
+                                          1.0
+                                        ],
+                                        begin: FractionalOffset.bottomLeft,
+                                        end: FractionalOffset.topRight,
+                                        tileMode: TileMode.repeated),
+                                    // borderRadius: BorderRadius.circular(10.0),
+                                    borderRadius: BorderRadius.only(
+                                      topRight: Radius.circular(20.0),
+                                      bottomRight: Radius.circular(20.0),
+                                    ),
                                   ),
+                                  child: Row(children: [
+                                    Image.asset('assets/images/image.png'),
+                                    SizedBox(width: 10.w),
+                                    Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        CustomText(
+                                            text: 'Voucher Name',
+                                            fontSize: 14.sp),
+                                        SizedBox(height: 6.h),
+                                        CustomText(
+                                            text: 'Aug 17-23',
+                                            color: mainColor,
+                                            fontSize: 13.sp),
+                                      ],
+                                    )
+                                  ]),
                                 ),
-                                child: Row(children: [
-                                  Image.asset('assets/images/image.png'),
-                                  SizedBox(width: 10.w),
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.center,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      CustomText(
-                                          text: 'Voucher Name',
-                                          fontSize: 14.sp),
-                                      SizedBox(height: 6.h),
-                                      CustomText(
-                                          text: 'Aug 17-23',
-                                          color: mainColor,
-                                          fontSize: 13.sp),
-                                    ],
-                                  )
-                                ]),
-                              ),
-                              Container(
-                                width:
-                                    MediaQuery.of(context).size.width / 2 - 22,
-                                height: 60.h,
-                                decoration: new BoxDecoration(
-                                  image: DecorationImage(
-                                    image: new AssetImage(
-                                        'assets/images/use_now.png'),
-                                    fit: BoxFit.fill,
+                                Container(
+                                  width: MediaQuery.of(context).size.width / 2 -
+                                      22,
+                                  height: 60.h,
+                                  decoration: new BoxDecoration(
+                                    image: DecorationImage(
+                                      image: new AssetImage(
+                                          'assets/images/use_now.png'),
+                                      fit: BoxFit.fill,
+                                    ),
+                                    borderRadius: BorderRadius.circular(10.0.r),
                                   ),
-                                  borderRadius: BorderRadius.circular(10.0.r),
+                                  child: Center(
+                                      child: CustomText(
+                                          text: 'USE NOW',
+                                          color: Colors.white,
+                                          fontSize: 14.sp,
+                                          fontWeight: FontWeight.bold)),
                                 ),
-                                child: Center(
-                                    child: CustomText(
-                                        text: 'USE NOW',
-                                        color: Colors.white,
-                                        fontSize: 14.sp,
-                                        fontWeight: FontWeight.bold)),
-                              ),
-                            ]),
-                        SizedBox(
-                          height: 10.h,
-                        ),
-                      ],
+                              ]),
+                          SizedBox(
+                            height: 10.h,
+                          ),
+                        ],
+                      ),
                     );
                   },
                 ),

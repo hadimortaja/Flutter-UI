@@ -33,10 +33,10 @@ class _VoucherDetailsState extends State<VoucherDetails> {
         ],
         iconTheme: IconThemeData(color: mainColor),
       ),
-      drawer: customDrawer(),
+      // drawer: customDrawer(),
       body: ListView(children: [
         Container(
-          height: 280.h,
+          height: 300.h,
           decoration: BoxDecoration(
             gradient: new LinearGradient(
                 colors: [Color(0xFF00A98B), Color(0xFF00E0B8)],
@@ -51,11 +51,11 @@ class _VoucherDetailsState extends State<VoucherDetails> {
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                  IconButton(
-                    onPressed: () => Get.back(),
-                    icon: Icon(Icons.arrow_back,
-                        color: Colors.white, size: 26.sp),
-                  ),
+                  // IconButton(
+                  //   onPressed: () => Get.back(),
+                  //   icon: Icon(Icons.arrow_back,
+                  //       color: Colors.white, size: 26.sp),
+                  // ),
                   Padding(
                     padding:
                         EdgeInsets.only(top: 28.h, left: 16.w, bottom: 22.h),

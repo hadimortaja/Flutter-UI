@@ -23,7 +23,7 @@ class EventDetails extends StatelessWidget {
         ],
         iconTheme: IconThemeData(color: mainColor),
       ),
-      drawer: customDrawer(),
+      // drawer: customDrawer(),
       body: ListView(
         children: [
           Stack(overflow: Overflow.visible, children: [
@@ -33,16 +33,16 @@ class EventDetails extends StatelessWidget {
               width: MediaQuery.of(context).size.width,
               fit: BoxFit.cover,
             ),
-            Positioned(
-              top: 20.0,
-              left: 15.0,
-              child: IconButton(
-                onPressed: () {
-                  Get.back();
-                },
-                icon: Icon(Icons.arrow_back, color: Colors.white, size: 24.sp),
-              ),
-            ),
+            // Positioned(
+            //   top: 20.0,
+            //   left: 15.0,
+            //   child: IconButton(
+            //     onPressed: () {
+            //       Get.back();
+            //     },
+            //     icon: Icon(Icons.arrow_back, color: Colors.white, size: 24.sp),
+            //   ),
+            // ),
             Positioned(
               top: 200.h,
               // bottom: 25,
